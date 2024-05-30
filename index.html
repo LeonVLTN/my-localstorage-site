@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Example</title>
+</head>
+<body>
+    <h1>LocalStorage Example</h1>
+    <input type="text" id="inputField" placeholder="Enter some text">
+    <button onclick="saveToLocalStorage()">Save</button>
+    <button onclick="loadFromLocalStorage()">Load</button>
+    <p id="output"></p>
+
+    <script>
+        function saveToLocalStorage() {
+            const inputField = document.getElementById('inputField');
+            localStorage.setItem('savedText', inputField.value);
+        }
+
+        function loadFromLocalStorage() {
+            const output = document.getElementById('output');
+            const savedText = localStorage.getItem('savedText');
+            output.textContent = savedText ? savedText : 'No data found';
+        }
+    </script>
+</body>
+</html>
